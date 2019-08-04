@@ -1,0 +1,16 @@
+/* page/mine/skillhelp/skillhelp.wxss */
+page{
+  background-color: #313340;
+}
+.u-wrp-bnr {
+  width: 100%;
+  height: 500rpx;
+  display: block;
+  position: relative;
+  top: 10rpx;
+  background: #f0f0f0;
+}
+.u-img-slide {
+  width: 100%;
+  height: inherit;
+}

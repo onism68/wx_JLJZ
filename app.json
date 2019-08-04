@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "page/home/home",
+    "page/biographicalNotes/biographicalNotes",
+    "page/test/test",
+    "page/compusRecruitment/compusRecruitment",
+    "page/mine/mine",
+    "page/mine/computer/computer",
+    "page/mine/mshelp/mshelp",
+    "page/mine/skillhelp/skillhelp"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#58c5c7",
+    "navigationBarTitleText": "简历简做",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "page/home/home",
+        "text": "主页",
+        "iconPath": "page/icon/home.png",
+        "selectedIconPath": "page/icon/home_p.png"
+      },
+      {
+        "pagePath": "page/mine/mine",
+        "text": "工具",
+        "iconPath": "page/icon/mine.png",
+        "selectedIconPath": "page/icon/mine_p.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

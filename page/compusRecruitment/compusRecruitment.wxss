@@ -1,0 +1,180 @@
+/* page/compusRecruitment/compusRecruitment.wxss */
+
+.ui_mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    visibility: hidden;
+}
+
+.ui_mask_visible {
+    opacity: 0.5;
+    visibility: visible;
+}
+.ui_dialogbody{
+  width: 100%;
+  height: 400px;
+
+}
+.ui_dialog {
+    z-index: 999;
+    opacity: 0;
+    width: 80%;
+    max-width: 600rpx;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 6rpx;
+    visibility: hidden;
+    transition-duration: 0.1s;
+    overflow: hidden;
+    text-align: center;
+}
+
+.ui_dialog_visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ui_dialog_hd {
+    padding: 40rpx 30rpx 10rpx 30rpx;
+}
+
+.ui_dialog_bd {
+    padding: 20rpx 30rpx 20rpx 30rpx;
+    min-height: 80rpx;
+    line-height: 1.3;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #999;
+}
+
+
+.ui_dialog_ft {
+    position: relative;
+    line-height: 96rpx;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    border-top: 2rpx solid #d5d5d6;
+}
+
+.ui_dialog_cancel {
+    flex: 1;
+    font-size: 13pt;
+    color: #3cc51f;
+}
+
+
+
+.ui_dialog_title {
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.ui_nomore {
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    border-top: 2rpx solid #e5e5e5;
+    text-align: center;
+    margin-top: 40rpx;
+    height: 60rpx;
+}
+
+.ui_nomore_content {
+    position: relative;
+    top: -30rpx;
+    padding: 0 15rpx;
+    background-color: #fff;
+    color: #999;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ui_nomore_bit {
+    position: absolute;
+    top: -10rpx;
+    left: 50%;
+    margin-left: -13rpx;
+    border: 8rpx solid #fff;
+    background-color: #999;
+    width: 10rpx;
+    height:10rpx;
+    border-radius: 50%;
+}
+.CompanyName{
+width: 100%;
+height: 40px;
+background-color:rgb(170, 170, 253);
+margin-top: 5px;
+}
+
+.CompanyAttr{
+width: 100%;
+height: 40px;
+background-color:white;
+}
+.CompanyType{
+width: 100%;
+height: 40px;
+background-color:rgb(170, 170, 253);
+}
+.PostDemand{
+width: 100%;
+height: 40px;
+background-color:white;
+}
+.Specialty{
+width: 100%;
+height: 40px;
+background-color:rgb(170, 170, 253);
+}
+.CompanyAddr{
+ width: 100%;
+height: 40px;
+background-color:white;
+}
+
+.CompanyLinkman{
+width: 100%;
+height: 40px;
+background-color:rgb(170, 170, 253);
+}
+.CompanyTEL{
+width: 100%;
+height: 40px;
+background-color:white;
+}
+.CompanyEmail{
+width: 100%;
+height: 40px;
+background-color:rgb(170, 170, 253);
+}
+.lfettext{
+width: 80px;
+height: 38px;
+float: left;
+margin-top: 1px;
+line-height:2.3em;
+}
+.ui_but{
+  width: 100%;
+  height: 200px;
+  margin-top: 20px;
+  background-color: red;
+}
+.Companyview{
+  width: 100%;
+  height: 180px;
+  margin-top: 20px;
+  background-color: red;
+}

@@ -1,0 +1,17 @@
+<!--page/mine/mine.wxml-->
+<view class="head1">
+
+</view>
+<view class="list0">
+<view class="list1">
+<button class="list11" bindtap = "list11">
+<image  class="list11img" src="../../page/icon/com.png"></image>
+<view class="text1">社保计算</view>
+</button>
+<button class="list12" bindtap = "list12"><image  class="list11img" src="../../page/icon/zd.png"></image>
+<view  class="text1">面试攻略</view></button>
+<button class="list13" bindtap = "list13"><image  class="list11img" src="../../page/icon/bf.png"></image>
+<view class="text1">技能提升</view></button>
+</view>
+<view class="list2"></view>
+</view>

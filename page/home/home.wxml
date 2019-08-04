@@ -1,0 +1,14 @@
+<!--page/home.wxml-->
+<view class="head">
+<view class="userAvatarUrl">
+      <open-data type="userAvatarUrl"  class='head-img'></open-data>
+    </view>
+<view class="userNickName">欢迎你! <open-data type="userNickName"></open-data></view>
+</view>
+<view class="yaoDai"></view>
+<view class="mad">
+<button class="biographicalNotes" bindtap = "biographicalNotes" ><image  class="add1" src="../../page/icon/icon6_Expand-l.png"></image>简历制作</button>
+<button class="test" bindtap = "test" ><image  class="add1" src="../../page/icon/icon8_biaoji.png"></image>职业测试</button>
+<button class="compusRecruitment" bindtap = "compusRecruitment"><image  class="add1" src="../../page/icon/icon8_xiugai.png"></image>校招入口</button>
+<view class="yaoDai1"></view>
+</view>

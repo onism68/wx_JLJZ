@@ -1,0 +1,192 @@
+<!--page/biographicalNotes/biographicalNotes.wxml-->
+<view class="info-container">
+ 
+<!--用户信息-->
+<form bindsubmit="submitData" >
+ <view class="page-body-setting">
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">  <text>类别:  </text></view>
+  <view class="info-text"> 2019应届毕业生/实习简历</view>
+  </view>
+  </view>
+ 
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">  <text>姓名:  </text></view>
+  <view class="info-text"> 张三<input name="name" class="input-text" /></view>
+  </view>
+  </view>
+ 
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">性别:</view>
+  <view class="info-text">
+  
+  <radio-group name="sex">
+  <radio value="1">男</radio>
+  <radio value="0">女</radio>
+  </radio-group>
+  </view>
+  </view>
+  </view>
+ 
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name"> 籍贯:</view>
+  <view class="info-text"> 陕西西安<input name="address" class="input-text" /></view>
+  </view>
+  </view>
+ 
+    <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">行业:</view>
+  <view class="info-text"> <picker bindchange="bindIndustryChange" name="industry" value="{{index}}" range="{{array}}">
+    <view class="picker">
+ {{array[index]}}
+    </view>
+  </picker></view>
+  </view>
+  </view>
+ 
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">电话号码:</view>
+  <view class="info-text">  <input name="phone" class="input-text" maxlength="10" /></view>
+  </view>
+  </view>
+ 
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">生日:</view>
+  <view class="info-text">
+    <picker name="birthday" bindchange="bindDateChange" mode="date" value="{{date}}" start="1990-01-01" end="2018-12-31">
+    <view class="picker">
+{{date}}
+    </view>
+  </picker>
+  
+  </view>
+  </view>
+  </view>
+ 
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">政治面貌:</view>
+  <view class="info-text"> <input name="company" class="input-text" /></view>
+  </view>
+  </view>
+ 
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">邮箱:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+ 
+ <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">主修课程:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+<view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">高中学历起止时间:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+<view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">本科学历起止时间:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+<view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">所获奖项:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+   
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习时间1:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+   
+
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习经历1:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习单位1:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+<view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习内容1:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习时间2:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+   
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习经历2:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习单位2:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+
+<view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习内容2:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+<view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">获奖及证书:</view>
+  <view class="info-text">  <input name="work" class="input-text" /></view>
+  </view>
+   </view>
+
+  <view>
+  <button class="button" form-type="submit">提交信息</button>
+  </view>
+ 
+  </view>
+  
+</form>
+</view>
+<!--------------------- 
+作者：liberalliushahe 
+来源：CSDN 
+原文：https://blog.csdn.net/liberalliushahe/article/details/79287195 
+版权声明：本文为博主原创文章，转载请附上博文链接！-->
