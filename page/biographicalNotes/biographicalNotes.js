@@ -34,4 +34,11 @@ Page({
       date: event.detail.value
     })
   },
+
+  /*
+
+  */
+  checkSexChange: function(e) {
+    console.log(e.detail.value)
+  }
 })

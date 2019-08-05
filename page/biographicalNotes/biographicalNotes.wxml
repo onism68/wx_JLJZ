@@ -13,8 +13,8 @@
  
   <view class="page-body-setting-item" >
   <view class="own-info-item">
-  <view class="info-name">  <text>姓名:  </text></view>
-  <view class="info-text"> 张三<input name="name" class="input-text" /></view>
+  <view class="info-name"><text>姓名: </text></view>
+  <view class="info-text"><input name="name" class="input-text" value=""/></view>
   </view>
   </view>
  
@@ -22,10 +22,11 @@
   <view class="own-info-item">
   <view class="info-name">性别:</view>
   <view class="info-text">
-  
-  <radio-group name="sex">
-  <radio value="1">男</radio>
-  <radio value="0">女</radio>
+  <radio-group name="sex" bindchange="checkSexChange">
+  <label class="radio">
+  <radio value="1"/>男
+  <radio value="0"/>女
+  </label>
   </radio-group>
   </view>
   </view>
@@ -34,7 +35,7 @@
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name"> 籍贯:</view>
-  <view class="info-text"> 陕西西安<input name="address" class="input-text" /></view>
+  <view class="info-text"><input name="address" class="input-text" value="陕西西安" /></view>
   </view>
   </view>
  
@@ -52,7 +53,7 @@
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">电话号码:</view>
-  <view class="info-text">  <input name="phone" class="input-text" maxlength="10" /></view>
+  <view class="info-text">  <input name="phone" type="number" class="input-text" maxlength="11" /></view>
   </view>
   </view>
  
@@ -80,9 +81,9 @@
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">邮箱:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-text">  <input name="email" class="input-text" /></view>
   </view>
-   </view>
+  </view>
  
  <view class="page-body-setting-item" >
   <view class="own-info-item">
@@ -91,12 +92,12 @@
   </view>
    </view>
 
-<view class="page-body-setting-item" >
+<!-- <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">高中学历起止时间:</view>
   <view class="info-text">  <input name="work" class="input-text" /></view>
   </view>
-   </view>
+   </view> -->
 
 <view class="page-body-setting-item" >
   <view class="own-info-item">
@@ -185,8 +186,3 @@
   
 </form>
 </view>
-<!--------------------- 
-作者：liberalliushahe 
-来源：CSDN 
-原文：https://blog.csdn.net/liberalliushahe/article/details/79287195 
-版权声明：本文为博主原创文章，转载请附上博文链接！-->
