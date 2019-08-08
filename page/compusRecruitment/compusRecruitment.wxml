@@ -1,33 +1,39 @@
 <!--page/compusRecruitment/compusRecruitment.wxml-->
 
 <view class='ui_nomore'>
-    <text class='ui_nomore_content'>校招信息</text>
-</view>
-
-<view class='ui_nomore'>
     <view class='ui_nomore_bit'></view>
 </view>
 <view class="Companyview">
-<view class='ui_btn' bindtap='prompt'>打开prompt</view></view>
+<view wx:for="{{jobsName}}">
+<view class='ui_btn' bindtap='prompt' id='{{item.JobsId}}'>{{item.CompanyName}}</view></view>
+</view>
+
+<!-- <view wx:for="{{jobsCon}}""> -->
+
 <view class='ui_dialog {{prompt?"ui_dialog_visible":""}}'>
     <view class='ui_dialog_hd'>
-        <view class='ui_dialog_title'>招聘企业</view>
+        <view class='ui_dialog_title'>招聘详细信息</view>
     </view>
     <view class="ui_dialogbody">
-    <view class="CompanyName"><view class="lfettext">企业名称</view></view>
-    <view class="CompanyAttr"><view class="lfettext">行业</view></view>
-    <view class="CompanyType"><view class="lfettext">公司性质</view></view>
-    <view class="PostDemand"><view class="lfettext">招聘职位</view></view>
-    <view class="Specialty"><view class="lfettext">宣讲地点</view></view>
-    <view class="CompanyAddr"><view class="lfettext">宣讲日期</view></view>
-    <view class="CompanyLinkman"><view class="lfettext">公司联系人</view></view>
-    <view class="CompanyTEL"><view class="lfettext">联系人电话</view></view>
-    <view class="CompanyEmail"><view class="lfettext">公司邮箱</view></view>
-    </view>
+    <view class="CompanyName"><view class="lfettext">企业名称: </view><view>{{CompanyName}}</view></view>
+    <view class="CompanyType"><view class="lfettext">公司性质</view><view>{{CompanyType}}</view></view>
+    <view class="Specialty"><view class="lfettext">招聘专业</view><view>{{Specialty}}</view></view>
+    <view class="PostDemand"><view class="lfettext">招聘职位</view><view>{{PostDemand}}</view></view>
     
+    <!-- <view class="PostDemand"><view class="lfettext">招聘职位</view></view>{{CompanyName}} -->
+    <view class="Specialty"><view class="lfettext">宣讲地点</view><view>{{SitusName}}</view></view>
+    <view class="CompanyAddr"><view class="lfettext">宣讲日期</view><view>{{MeetTime}}</view></view>
+    <view class="CompanyLinkman"><view class="lfettext">公司联系人</view><view>{{CompanyLinkmen}}</view></view>
+    <view class="CompanyTEL"><view class="lfettext">联系人电话</view><view>{{CompanyTel}}</view></view>
+    <view class="CompanyEmail"><view class="lfettext">公司邮箱</view><view>{{CompanyEmail}}</view></view>
+    </view>
     <view class='ui_dialog_ft'>
-        <view class='ui_dialog_cancel' bindtap='prompt'>确定</view>
-        
+        <view class='ui_dialog_cancel' bindtap='prompt'>确定</view>  
     </view>
 </view>
 <view class='ui_mask {{prompt?"ui_mask_visible":""}}' bindtap='prompt'></view>
+
+<!-- <view class='ui_btn' bindtap='prompt'>打开prompt</view> -->
+<!-- </view> -->
+<!-- <view class='ui_btn' bindtap='prompt'>打开prompt</view> -->
+<!-- </view> -->

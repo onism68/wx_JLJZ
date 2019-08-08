@@ -106,12 +106,6 @@
   </view>
    </view>
 
-<view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">所获奖项:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
-  </view>
-   </view>
    
    <view class="page-body-setting-item" >
   <view class="own-info-item">
@@ -171,18 +165,40 @@
   </view>
    </view>
 
-<view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">获奖及证书:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
-  </view>
-   </view>
+<view class="kuang">
+<textarea maxlength='200' bindinput='note' placeholder='请输入所获技能试证书'>
+    <text class='eColor'></text>
+</textarea>
+</view>
+
+<view class="kuang">
+<textarea maxlength='200' bindinput='note' placeholder='请输入所获奖项'>
+    <text class='eColor'></text>
+</textarea>
+</view>
+
+<view class="kuang">
+ <textarea maxlength='200' bindinput='note' placeholder='请输入自评'>
+    <text class='eColor'></text>
+</textarea>
+</view>
+<view class='kong'>
+    <view class='ui_cell_bd'>点击下面方框上传图片</view>
+    <view class='ui_cell_ft'>{{uploaderNum}}/1</view>
+</view>
+<view class='ui_uploader_cell'>
+    <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+        <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red"/>
+        <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+    </view>
+    <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
+</view>
 
   <view>
-  <button class="button" form-type="submit">提交信息</button>
+  <button class="button" form-type="submit" bindtap = "down">提交信息</button>
   </view>
  
   </view>
-  
+ 
 </form>
 </view>

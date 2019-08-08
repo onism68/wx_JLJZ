@@ -5,9 +5,10 @@
     "page/test/test",
     "page/compusRecruitment/compusRecruitment",
     "page/mine/mine",
-    "page/mine/computer/computer",
     "page/mine/mshelp/mshelp",
-    "page/mine/skillhelp/skillhelp"
+    "page/mine/skillhelp/skillhelp",
+    "page/mine/compu/compu",
+    "page/biographicalNotes/down/down"
   ],
   "window": {
     "backgroundTextStyle": "light",

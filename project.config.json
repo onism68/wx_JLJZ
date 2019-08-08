@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -58,13 +58,6 @@
 				},
 				{
 					"id": -1,
-					"name": "page/mine/computer/computer",
-					"pathName": "page/mine/computer/computer",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "page/compusRecruitment/compusRecruitment",
 					"pathName": "page/compusRecruitment/compusRecruitment",
 					"query": "",
@@ -74,6 +67,35 @@
 					"id": -1,
 					"name": "page/compusRecruitment/compusRecruitment",
 					"pathName": "page/compusRecruitment/compusRecruitment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/mine/skillhelp/skillhelp",
+					"pathName": "page/mine/skillhelp/skillhelp",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/biographicalNotes/down/down",
+					"pathName": "page/biographicalNotes/down/down",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/mine/compu/compu",
+					"pathName": "page/mine/compu/compu",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "page/mine/compu/compu",
+					"pathName": "page/mine/compu/compu",
+					"query": "",
 					"scene": null
 				}
 			]

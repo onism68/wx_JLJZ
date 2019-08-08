@@ -6,3 +6,16 @@
     </swiper-item>
   </block>
 </swiper>
+<view class="jiaocheng">
+<view class="erweima">
+<view class="note">
+获取资源请先关注公众号：学习学个啥。左侧为公众号二维码，进入公众号后，在聊天框回复获取码，即可获得资源。
+</view>
+</view>
+
+<view class="cell">PhotoShop安装包及教程,获取码：PSXCX</view>
+<view class="cell">Premiere安装包及教程,获取码：PRXCX</view>
+<view class="cell">海量PPT模板下载,获取码：PTXCX</view>
+<view class="cell">python教程,获取码：PYXCX</view>
+
+</view>

@@ -1,0 +1,18 @@
+<!--page/mine/compu/compu.wxml-->
+<view class="top">社保计算器</view>
+ <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">地区:</view>
+  <view class="info-text"> <picker bindchange="bindIndustryChange" name="industry" value="{{index}}" range="{{array}}">
+    <view class="picker">
+ {{array[index]}}
+    </view>
+  </picker></view>
+  </view>
+  </view>
+ <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name"><text>收入: </text></view>
+  <view class="info-text"><input name="name" class="input-text" value=""/></view>
+  </view>
+  </view>

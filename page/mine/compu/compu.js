@@ -1,10 +1,20 @@
-// page/mine/mine.js
+// page/mine/compu/compu.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    array: ['北京', '上海', '西安', '深圳', '广州',],
+    index: '0',
+    uploaderList: [],
+    uploaderNum: 0,
+    showUpload: true
+  },
+  bindIndustryChange: function (event) {
+    this.setData({
+      index: event.detail.value
+    })
 
   },
 
@@ -62,23 +72,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  list11: function () {
-    console.log("你点击了我")
-    wx.navigateTo({
-      url: '/page/mine/compu/compu',
-    })
-  },
-  list12: function () {
-    console.log("你点击了我")
-    wx.navigateTo({
-      url: '/page/mine/mshelp/mshelp',
-    })
-  },
-  list13: function () {
-    console.log("你点击了我")
-    wx.navigateTo({
-      url: '/page/mine/skillhelp/skillhelp',
-    })
-  },
+  }
 })
