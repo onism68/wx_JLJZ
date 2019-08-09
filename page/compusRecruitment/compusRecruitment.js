@@ -1,5 +1,6 @@
 // page/compusRecruitment/compusRecruitment.js
-var util = require("../../utils/util.js")
+// var util = require("../../utils/util.js")
+var app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -68,18 +69,18 @@ Page({
 
   },
   getJobs: function () {
-    var today = util.formatTime(new Date()).substr(0, 10)
-    console.log(util.formatTime(new Date()))
+    var today = app.util.formatTime(new Date()).substr(0, 10)
+    console.log(app.util.formatTime(new Date()))
     var nextDayTimeStamp = Date.now() + 24 * 60 * 60 * 1000
     var nextDay0 = new Date(nextDayTimeStamp)
-    var nextDay = util.formatTime(nextDay0).substr(0, 10)
+    var nextDay = app.util.formatTime(nextDay0).substr(0, 10)
     console.log(today)
     // jobsDate = "2019-05-14"
     console.log(
       today
     )
     var that = this
-    var jsonserver = "https://onism.top/xpuJobs/getJobs?startDate=2019-03-07"
+    var jsonserver = app._server +"/xpuJobs/getJobs?startDate=2019-03-07"
     console.log(jsonserver)
     wx.request({
       url: jsonserver,

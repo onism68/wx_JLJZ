@@ -14,7 +14,7 @@
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name"><text>姓名: </text></view>
-  <view class="info-text"><input name="name" class="input-text" value=""/></view>
+  <view class="info-text"><input name="userName" class="input-text" value=""/></view>
   </view>
   </view>
  
@@ -35,7 +35,7 @@
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name"> 籍贯:</view>
-  <view class="info-text"><input name="address" class="input-text" value="陕西西安" /></view>
+  <view class="info-text"><input name="local" class="input-text" value="陕西西安" /></view>
   </view>
   </view>
  
@@ -74,7 +74,7 @@
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">政治面貌:</view>
-  <view class="info-text"> <input name="company" class="input-text" /></view>
+  <view class="info-text"> <input name="mianMao" class="input-text" /></view>
   </view>
   </view>
  
@@ -88,7 +88,7 @@
  <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">主修课程:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-text">  <input name="subject" class="input-text" /></view>
   </view>
    </view>
 
@@ -102,7 +102,7 @@
 <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">本科学历起止时间:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-text">  <input name="benke" class="input-text" /></view>
   </view>
    </view>
 
@@ -110,7 +110,7 @@
    <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">实习时间1:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-text">  <input name="shidate1" class="input-text" /></view>
   </view>
    </view>
    
@@ -118,21 +118,21 @@
    <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">实习经历1:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-text">  <input name="shixi12" class="input-text" /></view>
   </view>
    </view>
 
    <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">实习单位1:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-text">  <input name="shixi13" class="input-text" /></view>
   </view>
    </view>
 
 <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">实习内容1:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-text">  <input name="shixi14" class="input-text" /></view>
   </view>
    </view>
 
@@ -195,7 +195,7 @@
 </view>
 
   <view>
-  <button class="button" form-type="submit" bindtap = "down">提交信息</button>
+  <button class="button" form-type="submit">提交信息</button>
   </view>
  
   </view>

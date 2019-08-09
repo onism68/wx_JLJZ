@@ -31,5 +31,6 @@ App({
   onError: function (msg) {
     
   },
-  
+  util: require('./utils/util'),
+  _server: "https://onism.top", 
 })
