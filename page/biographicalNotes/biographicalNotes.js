@@ -81,6 +81,10 @@ Page({
     //   key: 'resumeInfo',
     //   data: event.detail.value,
     // })
+    // var u = {
+    //   a: 'a',
+    //   b: 'b'
+    // }
     wx.request({
       url: app._server +'/wxResume/tplToResume',
       method: "POST",
@@ -88,7 +92,9 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       // data: event.detail.value,
-      data: infovalue,
+      data: {
+        userName: u
+      },
 
       success (res) {
         if (res.data['err'] != 0) {
