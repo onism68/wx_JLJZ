@@ -4,7 +4,7 @@
     <view class='ui_nomore_bit'></view>
 </view>
 <view class="Companyview">
-<view wx:for="{{jobsName}}">
+<view class="kong" wx:for="{{jobsName}}">
 <view class='ui_btn' bindtap='prompt' id='{{item.JobsId}}'>{{item.CompanyName}}</view></view>
 </view>
 
@@ -15,13 +15,12 @@
         <view class='ui_dialog_title'>招聘详细信息</view>
     </view>
     <view class="ui_dialogbody">
-    <view class="CompanyName"><view class="lfettext">企业名称: </view><view>{{CompanyName}}</view></view>
     <view class="CompanyType"><view class="lfettext">公司性质</view><view>{{CompanyType}}</view></view>
     <view class="Specialty"><view class="lfettext">招聘专业</view><view>{{Specialty}}</view></view>
     <view class="PostDemand"><view class="lfettext">招聘职位</view><view>{{PostDemand}}</view></view>
     
     <!-- <view class="PostDemand"><view class="lfettext">招聘职位</view></view>{{CompanyName}} -->
-    <view class="Specialty"><view class="lfettext">宣讲地点</view><view>{{SitusName}}</view></view>
+    <view class="Specialty1"><view class="lfettext">宣讲地点</view><view>{{SitusName}}</view></view>
     <view class="CompanyAddr"><view class="lfettext">宣讲日期</view><view>{{MeetTime}}</view></view>
     <view class="CompanyLinkman"><view class="lfettext">公司联系人</view><view>{{CompanyLinkmen}}</view></view>
     <view class="CompanyTEL"><view class="lfettext">联系人电话</view><view>{{CompanyTel}}</view></view>
