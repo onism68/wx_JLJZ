@@ -16,3 +16,69 @@
   <view class="info-text"><input name="name" class="input-text" value=""/></view>
   </view>
   </view>
+  <view></view>
+  <button class="qrjs">确认计算</button>
+  <view class="xsl-body">
+  
+  <view class="xsl-top">五险一金汇缴明细：</view>
+  <view class="tr">
+   <view class="th-2"></view>
+  <view class="th-2">个人应缴部分：</view>
+  <view class="th-2">单位应缴部分:</view>
+  </view>
+  <view class="tr">
+  <view class="th1">养老保险金：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">医疗保险金：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">失业保险金：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">基本公积金：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">补住房公积金：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">工伤保险金：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">生育保险金：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">共计支出：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">扣四金后月薪：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">个人所得税</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  <view class="tr">
+  <view class="th1">税后月薪：</view>
+  <view class="th"></view>
+  <view class="th"></view>
+  </view>
+  </view>

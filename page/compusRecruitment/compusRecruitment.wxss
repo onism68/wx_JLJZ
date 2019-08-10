@@ -1,5 +1,7 @@
 /* page/compusRecruitment/compusRecruitment.wxss */
-
+page{
+  background-color: #313340;
+}
 .ui_mask {
     position: fixed;
     top: 0;
@@ -12,6 +14,17 @@
     transition-duration: 0.3s;
     visibility: hidden;
 }
+.kong{
+  width: 96%;
+    height: 60px;
+  background-color: #F8F8F8;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 3.2;
+  margin: 15px auto;
+  }
+
 
 .ui_mask_visible {
     opacity: 0.5;
@@ -78,6 +91,7 @@
 .ui_dialog_title {
     font-size: 14pt;
     font-weight: 400;
+    border-bottom: solid #58c5c7 1px;
 }
 
 .ui_nomore {
@@ -111,17 +125,12 @@
     height:10rpx;
     border-radius: 50%;
 }
-.CompanyName{
-width: 100%;
-height: 40px;
-background-color:rgb(170, 170, 253);
-margin-top: 5px;
-}
 
 .CompanyAttr{
 width: 100%;
 height: 40px;
 background-color:white;
+line-height:2.3em;
 }
 .CompanyType{
 width: 100%;
@@ -130,10 +139,15 @@ background-color: white;
 }
 .PostDemand{
 width: 100%;
-height: 40px;
+height: 85px;
 background-color:white;
 }
 .Specialty{
+width: 100%;
+height: 65px;
+background-color:rgb(170, 170, 253);
+}
+.Specialty1{
 width: 100%;
 height: 40px;
 background-color:rgb(170, 170, 253);
@@ -142,22 +156,26 @@ background-color:rgb(170, 170, 253);
  width: 100%;
 height: 40px;
 background-color:white;
+line-height:2.3em;
 }
 
 .CompanyLinkman{
 width: 100%;
 height: 40px;
 background-color:rgb(170, 170, 253);
+line-height:2.3em;
 }
 .CompanyTEL{
 width: 100%;
 height: 40px;
 background-color:white;
+line-height:2.3em;
 }
 .CompanyEmail{
 width: 100%;
 height: 40px;
 background-color:rgb(170, 170, 253);
+line-height:2.3em;
 }
 .lfettext{
 width: 80px;
@@ -171,10 +189,4 @@ line-height:2.3em;
   height: 600px;
   margin-top: 20px;
   background-color: red;
-}
-.Companyview{
-  width: 100%;
-  height: 200px;
-  margin-top: 20px;
-  background-color: rgb(90, 216, 206);
 }
