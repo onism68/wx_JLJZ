@@ -6,12 +6,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: ['IT', '制造业', '互联网', '网络设备'],
-    date: "1992-10-12",
-    index: '0',
+    // array: ['IT', '制造业', '互联网', '网络设备'],
+    bdate: "1999-01-01",
+    shi1date: "2016-09-01",
+    shi2date: "2016-09-01",
+    bydate: "2016-09-01",
     uploaderList: [],
     uploaderNum: 0,
-    showUpload: true
+    showUpload: true,
+    awardData: "",
+    zipingData: "",
   },
 
   /**
@@ -75,7 +79,7 @@ Page({
   submitData: function (event) {
     var that = this
     console.log(event.detail.value)
-    console.log(event.detail.value.userName)
+    // console.log(event.detail.value.userName)
     var infovalue = event.detail.value
     // wx.setStorage({
     //   key: 'resumeInfo',
@@ -93,14 +97,40 @@ Page({
       },
       // data: event.detail.value,
       data: {
-        userName: u
+        userName: infovalue['userName'],
+        sex: infovalue['sex'],
+        local: infovalue['local'],
+        age: infovalue["age"],
+        hangYe: infovalue['hangye'],
+        phone: infovalue['phone'],
+        university: infovalue["university"],
+        beginYear: infovalue['bydate'],
+        email: infovalue['email'],
+        speciality: infovalue["speciality"],
+        subject: infovalue["subject"],
+        mianmao: infovalue['mianMao'],
+        shixi11: infovalue['shi1date'],
+        shixi12: infovalue['shixi12'],
+        shixi13: infovalue['shixi13'],
+        shixi14: infovalue['shixi14'],
+        shixi21: infovalue['shi2date'],
+        shixi22: infovalue['shixi22'],
+        shixi23: infovalue['shixi23'],
+        shixi24: infovalue['shixi24'],
       },
 
       success (res) {
         if (res.data['err'] != 0) {
           wx.showToast({
-            title: 'err',
+            title: res.data['data'][0],
             icon: 'none',
+          })
+        } else {
+          wx.showToast({
+            title: 'ok!!!',
+          })
+          wx.navigateTo({
+            url: '/page/biographicalNotes/down/down',
           })
         }
         console.log(res.data)
@@ -114,37 +144,63 @@ Page({
     //   url: '/page/biographicalNotes/down/down',
     // })
   },
-  note: function (e) {
+  award: function (e) {
     this.setData({
-      note: e.detail.value,
+      awardData: e.detail.value,
+      length: e.detail.value.length
+    })
+  },
+  ziping: function (e) {
+    this.setData({
+      zipingData: e.detail.value,
       length: e.detail.value.length
     })
   },
   /**
  * 获取行业数据
  */
-  bindIndustryChange: function (event) {
-    this.setData({
-      index: event.detail.value
-    })
+  // bindIndustryChange: function (event) {
+  //   this.setData({
+  //     index: event.detail.value
+  //   })
 
-  },
+  // },
   /**
  * 获取日期数据
  */
-  bindDateChange: function (event) {
+
+  // 生日
+  bindbDateChange: function (event) {
     this.setData({
-      date: event.detail.value
+      bdate: event.detail.value
+    })
+  },
+  // 实习1时间
+  bindshi1DateChange: function (event) {
+    this.setData({
+      shi1date: event.detail.value
+    })
+  },
+  // 实习2时间
+  bindshi2DateChange: function (event) {
+    this.setData({
+      shi2date: event.detail.value
+    })
+  },
+  // 毕业时间
+  bindbyDateChange: function (event) {
+    this.setData({
+      bydate: event.detail.value
     })
   },
 
-  /*
-
-  */
+  // 性别
   checkSexChange: function(e) {
     console.log(e.detail.value)
   },
-  clearImg: function (e) {
+
+  cccc: function (e) {
+    console.log("你好")
     var nowList = [];//新数据
     var uploaderList = this.data.uploaderList;//原数据
 
@@ -189,6 +245,17 @@ Page({
         that.setData({
           uploaderList: uploaderList,
           uploaderNum: uploaderList.length,
+        })
+        wx.uploadFile({
+          url: app._server + "/wxResume/uploadImage",
+          filePath: res.tempFilePaths[0],
+          name: 'upload-file',
+          header: {
+            "Content-Type": "multipart/form-data"//记得设置
+          },
+          success: function(res) {
+            console.log(res)
+          }
         })
       }
     })

@@ -14,7 +14,7 @@
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name"><text>姓名: </text></view>
-  <view class="info-text"><input name="userName" class="input-text" value=""/></view>
+  <view class="info-text"><input name="userName" class="input-text" value="张三"/></view>
   </view>
   </view>
  
@@ -39,21 +39,10 @@
   </view>
   </view>
  
-    <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">行业:</view>
-  <view class="info-text"> <picker bindchange="bindIndustryChange" name="industry" value="{{index}}" range="{{array}}">
-    <view class="picker">
- {{array[index]}}
-    </view>
-  </picker></view>
-  </view>
-  </view>
- 
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">电话号码:</view>
-  <view class="info-text">  <input name="phone" type="number" class="input-text" maxlength="11" /></view>
+  <view class="info-text">  <input name="phone" type="number" class="input-text" maxlength="11" value="13800000000" /></view>
   </view>
   </view>
  
@@ -61,134 +50,174 @@
   <view class="own-info-item">
   <view class="info-name">生日:</view>
   <view class="info-text">
-    <picker name="birthday" bindchange="bindDateChange" mode="date" value="{{date}}" start="1990-01-01" end="2018-12-31">
+    <picker name="birthday" bindchange="bindbDateChange" mode="date" value="{{bdate}}" start="1990-01-01" end="2018-12-31">
     <view class="picker">
-{{date}}
+    {{bdate}}
     </view>
-  </picker>
-  
+    </picker>
   </view>
   </view>
   </view>
- 
+
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">年龄:</view>
+  <view class="info-text">  <input name="age" type="number" class="input-text" maxlength="3" value="18" /></view>
+  </view>
+  </view>
+
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">政治面貌:</view>
-  <view class="info-text"> <input name="mianMao" class="input-text" /></view>
+  <view class="info-text"> <input name="mianMao" class="input-text" value="共青团员"/></view>
   </view>
   </view>
  
   <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">邮箱:</view>
-  <view class="info-text">  <input name="email" class="input-text" /></view>
+  <view class="info-text">  <input name="email" class="input-text" value="xxxxx@gmail.com"/></view>
   </view>
   </view>
- 
+
+  <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">专业:</view>
+  <view class="info-text">  <input name="speciality" class="input-text" value="测试1"/></view>
+  </view>
+  </view>
  <view class="page-body-setting-item" >
   <view class="own-info-item">
   <view class="info-name">主修课程:</view>
-  <view class="info-text">  <input name="subject" class="input-text" /></view>
+  <view class="info-text">  <input name="subject" class="input-text" value="测试1"/></view>
   </view>
-   </view>
+  </view>
 
-<!-- <view class="page-body-setting-item" >
+  <view class="page-body-setting-item" >
   <view class="own-info-item">
-  <view class="info-name">高中学历起止时间:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-name">行业:</view>
+  <view class="info-text"><input name="hangye" class="input-text" value="软件工程师" /></view>
   </view>
-   </view> -->
+  </view>
 
 <view class="page-body-setting-item" >
   <view class="own-info-item">
-  <view class="info-name">本科学历起止时间:</view>
-  <view class="info-text">  <input name="benke" class="input-text" /></view>
-  </view>
-   </view>
-
-   
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习时间1:</view>
-  <view class="info-text">  <input name="shidate1" class="input-text" /></view>
-  </view>
-   </view>
-   
-
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习经历1:</view>
-  <view class="info-text">  <input name="shixi12" class="input-text" /></view>
-  </view>
-   </view>
-
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习单位1:</view>
-  <view class="info-text">  <input name="shixi13" class="input-text" /></view>
+  <view class="info-name">最高学历学校名称:</view>
+  <view class="info-text">  <input name="university" class="input-text" value="西安工程大学" /></view>
   </view>
    </view>
 
 <view class="page-body-setting-item" >
   <view class="own-info-item">
-  <view class="info-name">实习内容1:</view>
-  <view class="info-text">  <input name="shixi14" class="input-text" /></view>
+  <view class="info-name">最高学历开始时间:</view>
+  <view class="info-text">
+    <picker name="bydate" bindchange="bindbyDateChange" mode="date" value="{{bydate}}" start="1990-01-01" end="2018-12-31">
+    <view class="picker">
+    {{bydate}}
+    </view>
+    </picker>
   </view>
-   </view>
+  </view>
+  </view>
 
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习时间2:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
-  </view>
-   </view>
    
    <view class="page-body-setting-item" >
   <view class="own-info-item">
-  <view class="info-name">实习经历2:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-name">实习1时间:</view>
+  <view class="info-text">
+    <picker name="shi1date" bindchange="bindshi1DateChange" mode="date" value="{{shi1date}}" start="1990-01-01" end="2018-12-31">
+    <view class="picker">
+    {{shi1date}}
+    </view>
+    </picker>
+    </view>
   </view>
    </view>
 
    <view class="page-body-setting-item" >
   <view class="own-info-item">
-  <view class="info-name">实习单位2:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-name">实习1地点:</view>
+  <view class="info-text">  <input name="shixi12" class="input-text" value="地点1"/></view>
   </view>
    </view>
 
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习1职位:</view>
+  <view class="info-text">  <input name="shixi13" class="input-text" value="职位1"/></view>
+  </view>
+   </view>
 
 <view class="page-body-setting-item" >
   <view class="own-info-item">
-  <view class="info-name">实习内容2:</view>
-  <view class="info-text">  <input name="work" class="input-text" /></view>
+  <view class="info-name">实习1内容:</view>
+  <view class="info-text">  <input name="shixi14" class="input-text" value="内容1"/></view>
   </view>
    </view>
 
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习2时间:</view>
+  <view class="info-text">      
+  <picker name="shi2date" bindchange="bindshi2DateChange" mode="date" value="{{shi2date}}" start="1990-01-01" end="2018-12-31">
+    <view class="picker">
+    {{shi2date}}
+    </view>
+    </picker>
+    </view>
+  </view>
+   </view>
+   
+
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习2地点:</view>
+  <view class="info-text">  <input name="shixi22" class="input-text" value="地点2"/></view>
+  </view>
+   </view>
+
+   <view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习2职位:</view>
+  <view class="info-text">  <input name="shixi23" class="input-text" value="职位2"/></view>
+  </view>
+   </view>
+
+<view class="page-body-setting-item" >
+  <view class="own-info-item">
+  <view class="info-name">实习2内容:</view>
+  <view class="info-text">  <input name="shixi24" class="input-text" value="内容2"/></view>
+  </view>
+   </view>
+
+
 <view class="kuang">
-<textarea maxlength='200' bindinput='note' placeholder='请输入所获技能试证书'>
-    <text class='eColor'></text>
+<textarea maxlength='200' bindinput='note' placeholder='请输入所获技能试证书，用空格分隔' name="">
+    <!-- <text class='eColor'></text> -->
 </textarea>
 </view>
 
 <view class="kuang">
-<textarea maxlength='200' bindinput='note' placeholder='请输入所获奖项'>
-    <text class='eColor'></text>
+<textarea maxlength='100' bindinput='award' placeholder='请输入所获奖项,用空格分隔'>
+    <!-- <text class='eColor'></text> -->
 </textarea>
 </view>
 
+
 <view class="kuang">
- <textarea maxlength='200' bindinput='note' placeholder='请输入自评'>
-    <text class='eColor'></text>
+ <textarea maxlength='100' bindinput='ziping' placeholder='请输入简短自评'>
+    <!-- <text class='eColor'></text> -->
 </textarea>
 </view>
+
+
 <view class='kong'>
-    <view class='ui_cell_bd'>点击下面方框上传图片</view>
+    <view class='ui_cell_bd'>点击下面方框上传自己的照片</view>
     <view class='ui_cell_ft'>{{uploaderNum}}/1</view>
 </view>
 <view class='ui_uploader_cell'>
     <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
-        <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red"/>
+        <icon class='ui_uploader_item_icon' bindtap="cccc" data-index="{{index}}" type="clear" size="20" color="red"/>
         <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
     </view>
     <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
