@@ -1,4 +1,5 @@
 // page/biographicalNotes/down/down.js
+var app = getApp()
 Page({
 
   /**
@@ -12,7 +13,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // this.downDocx()
+    
   },
 
   /**
@@ -62,5 +64,28 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 文件下载
+  downDocx: function () {
+    var _that = this
+    wx.getStorage({
+      key: 'docxFileName',
+      success: function (res) {
+        console.log(res)
+        wx.downloadFile({
+          url: app._server + "/userDocx/" + res.data+".docx",
+          success: function (res) {
+            var filePath = res.tempFilePath;
+            console.log(filePath)
+            wx.openDocument({
+              filePath: filePath,
+              success: function (res) {
+                console.log(res)
+              }
+            })
+          },
+        })
+      }
+    })
   }
 })

@@ -1,14 +1,23 @@
 <!--page/compusRecruitment/compusRecruitment.wxml-->
 
-<view class='ui_nomore'>
+
+<view class="weui-cells weui-cells_after-title" wx:for="{{jobsName}}" wx:key='JobsId' >
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+      <view class="weui-cell__bd" bindtap="toJobCon" id= '{{item.JobsId}}'>{{item.CompanyName}}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
+
+
+<!-- <view class='ui_nomore'>
     <view class='ui_nomore_bit'></view>
 </view>
 <view class="Companyview">
 <view class="kong" wx:for="{{jobsName}}">
-<view class='ui_btn' bindtap='prompt' id='{{item.JobsId}}'>{{item.CompanyName}}</view></view>
-</view>
+<view class='ui_btn' bindtap='toJobCon' id='{{item.JobsId}}'>{{item.CompanyName}}</view></view>
+</view> -->
 
-<!-- <view wx:for="{{jobsCon}}""> -->
+<!-- <view wx:for="{{jobsCon}}"">
 
 <view class='ui_dialog {{prompt?"ui_dialog_visible":""}}'>
     <view class='ui_dialog_hd'>
@@ -20,7 +29,7 @@
     <view class="PostDemand"><view class="lfettext">招聘职位</view><view>{{PostDemand}}</view></view>
     
     <!-- <view class="PostDemand"><view class="lfettext">招聘职位</view></view>{{CompanyName}} -->
-    <view class="Specialty1"><view class="lfettext">宣讲地点</view><view>{{SitusName}}</view></view>
+    <!-- <view class="Specialty1"><view class="lfettext">宣讲地点</view><view>{{SitusName}}</view></view>
     <view class="CompanyAddr"><view class="lfettext">宣讲日期</view><view>{{MeetTime}}</view></view>
     <view class="CompanyLinkman"><view class="lfettext">公司联系人</view><view>{{CompanyLinkmen}}</view></view>
     <view class="CompanyTEL"><view class="lfettext">联系人电话</view><view>{{CompanyTel}}</view></view>
@@ -30,7 +39,7 @@
         <view class='ui_dialog_cancel' bindtap='prompt'>确定</view>  
     </view>
 </view>
-<view class='ui_mask {{prompt?"ui_mask_visible":""}}' bindtap='prompt'></view>
+<view class='ui_mask {{prompt?"ui_mask_visible":""}}' bindtap='prompt'></view> -->
 
 <!-- <view class='ui_btn' bindtap='prompt'>打开prompt</view> -->
 <!-- </view> -->

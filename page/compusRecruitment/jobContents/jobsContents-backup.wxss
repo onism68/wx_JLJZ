@@ -1,0 +1,29 @@
+/* page/compusRecruitment/jobContents/jobsContents.wxss */
+page{
+  background-color: #313340;
+}
+.body{
+  /* background-color: gray; */
+  text-align: center;
+  /* background-color: #EFEFF4; */
+}
+.title{
+  text-align: center;
+  margin: 15px auto;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
+  width: 95%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #EFEFF4;
+}
+.info{
+  font-size: 16px;
+  margin: 15px auto;
+  width: 95%;
+  height: 100%;
+  border-radius: 16px;
+  background-color: #EFEFF4;
+  text-align: left;
+
+}

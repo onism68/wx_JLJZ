@@ -192,7 +192,7 @@
 
 
 <view class="kuang">
-<textarea maxlength='200' bindinput='note' placeholder='请输入所获技能试证书，用空格分隔' name="">
+<textarea maxlength='200' bindinput='note' placeholder='请输入所获技能试证书，用空格分隔'>
     <!-- <text class='eColor'></text> -->
 </textarea>
 </view>

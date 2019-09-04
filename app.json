@@ -8,7 +8,8 @@
     "page/mine/mshelp/mshelp",
     "page/mine/skillhelp/skillhelp",
     "page/mine/compu/compu",
-    "page/biographicalNotes/down/down"
+    "page/biographicalNotes/down/down",
+    "page/compusRecruitment/jobContents/jobsContents"
   ],
   "window": {
     "backgroundTextStyle": "light",

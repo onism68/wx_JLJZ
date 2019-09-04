@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    prompt: false,
+    // prompt: false,
     // jobsCon: "0"
   },
   /**
@@ -18,7 +18,8 @@ Page({
     this.getJobs()
     // console.log(this.data.jobsCon)
     // console.log()
-    this.prompt()
+    // this.prompt()
+    this.toJobCon()
   },
 
   /**
@@ -75,12 +76,10 @@ Page({
     var nextDay0 = new Date(nextDayTimeStamp)
     var nextDay = app.util.formatTime(nextDay0).substr(0, 10)
     console.log(today)
+    console.log(nextDay)
     // jobsDate = "2019-05-14"
-    console.log(
-      today
-    )
     var that = this
-    var jsonserver = app._server +"/xpuJobs/getJobs?startDate=2019-03-07"
+    var jsonserver = app._server +"/xpuJobs/getJobs?startDate="+today
     console.log(jsonserver)
     wx.request({
       url: jsonserver,
@@ -115,6 +114,31 @@ Page({
       }
     })
   },
+
+  toJobCon: function (e) {
+    var _that = this
+    if (e == undefined) {
+      wx.setStorage({
+        key: 'jobsId',
+        data: '',
+      })
+      console.log("用户初次打开本页面")
+    } else if (e['target']['id'] === '') {
+      // todo 以后完善，当此id为空时，将不显示内容，页面友好处理
+      console.log("jobsId为空")
+    } else {
+      var _jobsId = e['target']['id']
+      console.log(_jobsId)
+      wx.setStorage({
+        key: 'jobsId',
+        data: _jobsId,
+      })
+      wx.navigateTo({
+        url: '/page/compusRecruitment/jobContents/jobsContents',
+      })
+    }
+  },
+
   prompt: function (e) {
     var _this = this
     if (e == undefined) {
@@ -154,8 +178,10 @@ Page({
         },
       })
       this.setData({
-        prompt: !this.data.prompt
+        // prompt: !this.data.prompt
+        "jobsId": e['target']['id']
       })
+      console.log("？？？？？")
       console.log(e['target']['id'])
     }
   }

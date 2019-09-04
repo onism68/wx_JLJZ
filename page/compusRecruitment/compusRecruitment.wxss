@@ -16,7 +16,7 @@ page{
 }
 .kong{
   width: 96%;
-    height: 60px;
+  height: 60px;
   background-color: #F8F8F8;
   border-radius: 20px;
   text-align: center;

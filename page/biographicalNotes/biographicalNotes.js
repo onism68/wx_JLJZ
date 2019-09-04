@@ -14,8 +14,10 @@ Page({
     uploaderList: [],
     uploaderNum: 0,
     showUpload: true,
+    noteData: "",
     awardData: "",
     zipingData: "",
+    userId: 0, 
   },
 
   /**
@@ -23,6 +25,24 @@ Page({
    */
   onLoad: function (options) {
 
+    var code = "";
+    //首先默认code为空字符串
+    //设置长度，这里看需求，我这里设置了10
+    var codeLength = 16;
+    //设置随机字符
+    var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+    //循环codeLength 我设置的10就是循环10次
+    for (var i = 0; i < codeLength; i++) {
+      //设置随机数范围,这设置为0 ~ 36
+      var index = Math.floor(Math.random() * 36);
+      //字符串拼接 将每次随机的字符 进行拼接
+      code += random[index];
+    }
+    this.setData({
+      userId: app.md5.md5(code)
+    })
+    console.log(code)
+    console.log(app.md5.md5(code))
   },
 
   /**
@@ -97,6 +117,7 @@ Page({
       },
       // data: event.detail.value,
       data: {
+        userId: this.data.userId,
         userName: infovalue['userName'],
         sex: infovalue['sex'],
         local: infovalue['local'],
@@ -120,14 +141,29 @@ Page({
       },
 
       success (res) {
-        if (res.data['err'] != 0) {
-          wx.showToast({
-            title: res.data['data'][0],
-            icon: 'none',
-          })
+        console.log("err", res.data["err"])
+        if (res.data["err"] != 0) {
+          if (res.data["err"] == 2) {
+            wx.showToast({
+              title: '请上传个人照片',
+              icon: "none",
+            })
+          } else if (res.data["err"] == 1) {
+            // 
+            console.log(res.data)
+            wx.showToast({
+              title: res.data['data'][0],
+              icon: 'none',
+            })
+          }
+          return
         } else {
           wx.showToast({
             title: 'ok!!!',
+          })
+          wx.setStorage({
+            key: 'docxFileName',
+            data: that.data.userId,
           })
           wx.navigateTo({
             url: '/page/biographicalNotes/down/down',
@@ -143,6 +179,12 @@ Page({
     // wx.navigateTo({
     //   url: '/page/biographicalNotes/down/down',
     // })
+  },
+  note: function (e) {
+    this.setData({
+      noteData: e.detail.value,
+      length: e.detail.value.length
+    })
   },
   award: function (e) {
     this.setData({
@@ -252,6 +294,9 @@ Page({
           name: 'upload-file',
           header: {
             "Content-Type": "multipart/form-data"//记得设置
+          },
+          formData: {
+            userId : that.data.userId
           },
           success: function(res) {
             console.log(res)
