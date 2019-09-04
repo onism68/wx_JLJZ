@@ -1,4 +1,5 @@
 // page/compusRecruitment/jobContents/jobsContents.js
+var app = getApp()
 Page({
 
   /**
@@ -68,34 +69,54 @@ Page({
     wx.getStorage({
       key: 'jobsId',
       success: function(res) {
-        console.log(res)
+        // console.log(app.jobsIdMap)
         _that.setData({
           jobsId: res['data'],
         })
-        wx.getStorage({
-          key: 'jobs',
-          success: function (res) {
-            var _data = res['data']
-            for (var i = 0; i < _data.length; i++) {
-              if (_that.data.jobsId == _data[i]['JobsId']) {
-                _that.setData({
-                  'CompanyName': _data[i]['CompanyName'],
-                  'CompanyType': _data[i]['CompanyType'],
-                  'Specialty': _data[i]['Specialty'],
-                  'PostDemand': _data[i]['PostDemand'],
-                  'MeetTime': _data[i]['MeetTime'],
-                  'SitusName': _data[i]['SitusName'],
-                  'CompanyLinkmen': _data[i]['CompanyLinkmen'],
-                  'CompanyTel': _data[i]['CompanyTel'],
-                  'CompanyEmail': _data[i]['CompanyEmail'],
-                  // 'CompanyType': _data[i]['CompanyLinkmen'],
-                })
-                console.log(_data[i]['CompanyName'])
-              }
-            }
-            console.log(res)
-          },
+        var content = app.jobsIdMap.get(_that.data.jobsId)
+        // console.log(content)
+        _that.setData({
+          'CompanyName': content['CompanyName'],
+          'CompanyType': content['CompanyType'],
+          'Specialty': content['Specialty'],
+          'PostDemand': content['PostDemand'],
+          'MeetTime': content['MeetTime'],
+          'SitusName': content['SitusName'],
+          'CompanyLinkmen': content['CompanyLinkmen'],
+          'CompanyTel': content['CompanyTel'],
+          'CompanyEmail': content['CompanyEmail'],
+          // 'CompanyType': content['CompanyLinkmen'],
         })
+        console.log(content['CompanyName'])
+
+
+
+
+        // wx.getStorage({
+        //   key: 'jobs',
+        //   success: function (res) {
+        //     console.log(res)
+        //     var _data = res
+        //     console.log(_data)
+        //     if (_that.data.jobsId == content['JobsId']) {
+        //       _that.setData({
+        //         'CompanyName': content['CompanyName'],
+        //         'CompanyType': content['CompanyType'],
+        //         'Specialty': content['Specialty'],
+        //         'PostDemand': content['PostDemand'],
+        //         'MeetTime': content['MeetTime'],
+        //         'SitusName': content['SitusName'],
+        //         'CompanyLinkmen': content['CompanyLinkmen'],
+        //         'CompanyTel': content['CompanyTel'],
+        //         'CompanyEmail': content['CompanyEmail'],
+        //         // 'CompanyType': content['CompanyLinkmen'],
+        //         })
+        //       console.log(content['CompanyName'])
+        //     }
+        //     console.log(res)
+        //   },
+        // })
+        
       },
       fail: function(res) {
         console.log(res)

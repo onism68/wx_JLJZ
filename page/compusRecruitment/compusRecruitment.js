@@ -1,6 +1,7 @@
 // page/compusRecruitment/compusRecruitment.js
 // var util = require("../../utils/util.js")
 var app = getApp()
+
 Page({
   /**
    * 页面的初始数据
@@ -70,6 +71,10 @@ Page({
 
   },
   getJobs: function () {
+    // 用创建ID map存取招聘信息，提高读取效率
+    let jobsIdMap = new Map()
+    app.jobsIdMap = jobsIdMap
+
     var today = app.util.formatTime(new Date()).substr(0, 10)
     console.log(app.util.formatTime(new Date()))
     var nextDayTimeStamp = Date.now() + 24 * 60 * 60 * 1000
@@ -96,20 +101,31 @@ Page({
           var rows = _data['data']
           // console.log(rows)
           for (var i = 0; i < rows.length; i++) {
-            var CompanyName = rows[i]['CompanyName'];
+            var jobsId = rows[i]['JobsId']
+            jobsIdMap.set(jobsId, rows[i])
+            //var CompanyName = rows[i]['CompanyName'];
             // console.log(rows[i]['CompanyName']);
             // data: {
             //   jobs: CompanyName};
           }
+          // test
+          console.log(jobsIdMap)
+
           that.setData({
             jobsName: rows
           })
           console.log(rows)
           // return rows
-          wx.setStorage({
-            key: 'jobs',
-            data: rows,
-          })
+          // wx.setStorage({
+          //   key: 'jobs',
+          //   data: jobsIdMap,
+          //   success: function (res) {
+          //     console.log(res)
+          //   },
+          //   fail: function (res) {
+          //     console.log(res)
+          //   }
+          // })
         }
       }
     })
@@ -138,6 +154,13 @@ Page({
       })
     }
   },
+
+
+
+
+
+
+
 
   prompt: function (e) {
     var _this = this
