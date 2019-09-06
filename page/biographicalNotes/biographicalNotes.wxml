@@ -1,233 +1,311 @@
 <!--page/biographicalNotes/biographicalNotes.wxml-->
-<view class="info-container">
- 
-<!--用户信息-->
-<form bindsubmit="submitData" >
- <view class="page-body-setting">
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">  <text>类别:  </text></view>
-  <view class="info-text"> 2019应届毕业生/实习简历</view>
-  </view>
-  </view>
- 
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name"><text>姓名: </text></view>
-  <view class="info-text"><input name="userName" class="input-text" value="张三"/></view>
-  </view>
-  </view>
- 
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">性别:</view>
-  <view class="info-text">
-  <radio-group name="sex" bindchange="checkSexChange">
-  <label class="radio">
-  <radio value="1"/>男
-  <radio value="0"/>女
-  </label>
-  </radio-group>
-  </view>
-  </view>
-  </view>
- 
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name"> 籍贯:</view>
-  <view class="info-text"><input name="local" class="input-text" value="陕西西安" /></view>
-  </view>
-  </view>
- 
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">电话号码:</view>
-  <view class="info-text">  <input name="phone" type="number" class="input-text" maxlength="11" value="13800000000" /></view>
-  </view>
-  </view>
- 
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">生日:</view>
-  <view class="info-text">
-    <picker name="birthday" bindchange="bindbDateChange" mode="date" value="{{bdate}}" start="1990-01-01" end="2018-12-31">
-    <view class="picker">
-    {{bdate}}
+
+<view class="page__bd">
+  <form bindsubmit="submitData">
+    <view class="weui-cells__title">个人信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">类别：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <text>个人简历</text>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="userName" placeholder="请输入姓名" />
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-label">性别:</view>
+        <view class="weui-cell__bd showtext">
+          <radio-group name="sex" bindchange="checkSexChange">
+            <label class="radio">
+              <radio value="1" />男
+              <radio value="0" />女
+            </label>
+          </radio-group>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">籍贯：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="local" placeholder="请输入籍贯" />
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">手机号码：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="phone" maxlength="11" placeholder="请输入手机号码" />
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">生日：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="birthday" bindchange="bindbDateChange" mode="date" value="{{bdate}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{bdate}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">年龄：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="age" maxlength="3" placeholder="请输入年龄" />
+        </view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">政治面貌：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="mianMao" maxlength="4" placeholder="请输入政治面貌" />
+        </view>
+      </view>
+
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">邮箱：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="email" placeholder="请输入邮箱" />
+        </view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">专业：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="speciality" placeholder="请输入专业" />
+        </view>
+      </view>
+
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-label">主修课程：</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="subject" class="weui-textarea" placeholder="请输入主修课程， 课程之间用逗号分隔！" style="height: 2.2em" />
+          <view class="weui-textarea-counter">0/200</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">行业：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="hangye" placeholder="请输入所应聘行业" />
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">学校名称：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <input class="weui-input" name="university" placeholder="请输入最高学历学校名称" />
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">学历开始时间：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="bydate" bindchange="bindbyDateChange" mode="date" value="{{bydate}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{bydate}}
+            </view>
+          </picker>
+        </view>
+      </view>
     </view>
-    </picker>
-  </view>
-  </view>
-  </view>
 
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">年龄:</view>
-  <view class="info-text">  <input name="age" type="number" class="input-text" maxlength="3" value="18" /></view>
-  </view>
-  </view>
 
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">政治面貌:</view>
-  <view class="info-text"> <input name="mianMao" class="input-text" value="共青团员"/></view>
-  </view>
-  </view>
- 
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">邮箱:</view>
-  <view class="info-text">  <input name="email" class="input-text" value="xxxxx@gmail.com"/></view>
-  </view>
-  </view>
-
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">专业:</view>
-  <view class="info-text">  <input name="speciality" class="input-text" value="测试1"/></view>
-  </view>
-  </view>
- <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">主修课程:</view>
-  <view class="info-text">  <input name="subject" class="input-text" value="测试1"/></view>
-  </view>
-  </view>
-
-  <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">行业:</view>
-  <view class="info-text"><input name="hangye" class="input-text" value="软件工程师" /></view>
-  </view>
-  </view>
-
-<view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">最高学历学校名称:</view>
-  <view class="info-text">  <input name="university" class="input-text" value="西安工程大学" /></view>
-  </view>
-   </view>
-
-<view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">最高学历开始时间:</view>
-  <view class="info-text">
-    <picker name="bydate" bindchange="bindbyDateChange" mode="date" value="{{bydate}}" start="1990-01-01" end="2018-12-31">
-    <view class="picker">
-    {{bydate}}
+    <view class="weui-cells__title">实习信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">实习1时间：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="shi1date" bindchange="bindshi1DateChange" mode="date" placeholder="{{shi1date}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{shi1date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-label">实习1详情：</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="shixi12" class="weui-textarea" placeholder="请输入实习详情，例如：在公司1担任职务1，完成工作1" style="height: 2.2em" />
+          <view class="weui-textarea-counter">0/50</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">实习2时间：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="shi2date" bindchange="bindshi2DateChange" mode="date" placeholder="{{shi2date}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{shi2date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-label">实习2详情：</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="shixi22" class="weui-textarea" placeholder="请输入实习详情，例如：在公司2担任职务2，完成工作2" style="height: 2.2em" />
+          <view class="weui-textarea-counter">0/50</view>
+        </view>
+      </view>
     </view>
-    </picker>
-  </view>
-  </view>
-  </view>
 
-   
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习1时间:</view>
-  <view class="info-text">
-    <picker name="shi1date" bindchange="bindshi1DateChange" mode="date" value="{{shi1date}}" start="1990-01-01" end="2018-12-31">
-    <view class="picker">
-    {{shi1date}}
+
+    <view class="weui-cells__title">证书信息</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证书1时间：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="zheng1date" bindchange="bindzheng1DateChange" mode="date" placeholder="{{zheng1date}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{zheng1date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-label">证书1详情：</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="zheng12" class="weui-textarea" placeholder="请输入证书详情，例如：计算机二级证书" style="height: 2.2em" />
+          <view class="weui-textarea-counter">0/50</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">证书1时间：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="zheng2date" bindchange="bindzheng2DateChange" mode="date" placeholder="{{zheng2date}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{zheng2date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-label">证书2详情：</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="zheng22" class="weui-textarea" placeholder="请输入证书详情，例如：英语四六级证书" style="height: 2.2em" />
+          <view class="weui-textarea-counter">0/50</view>
+        </view>
+      </view>
     </view>
-    </picker>
+
+    <view class="weui-cells__title">所获奖项</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">奖项1时间：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="jiang1date" bindchange="bindjiang1DateChange" mode="date" placehoder="{{jiang1date}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{jiang1date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-label">奖项1详情：</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="jiang12" class="weui-textarea" placeholder="请输入奖项详情，例如：获得互联网+全国一等奖" style="height: 2.2em" />
+          <view class="weui-textarea-counter">0/50</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">奖项2时间：</view>
+        </view>
+        <view class="weui-cell__bd showtext">
+          <picker name="jiang2date" bindchange="bindjiang2DateChange" mode="date" placeholder="{{jiang2date}}" start="1990-01-01" end="2018-12-31">
+            <view class="picker">
+              {{jiang2date}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-label">奖项2详情：</view>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <textarea name="jiang22" class="weui-textarea" placeholder="请输入奖项详情，例如：获得互联网+全国一等奖" style="height: 2.2em" />
+          <view class="weui-textarea-counter">0/50</view>
+        </view>
+      </view>
     </view>
-  </view>
-   </view>
 
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习1地点:</view>
-  <view class="info-text">  <input name="shixi12" class="input-text" value="地点1"/></view>
-  </view>
-   </view>
-
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习1职位:</view>
-  <view class="info-text">  <input name="shixi13" class="input-text" value="职位1"/></view>
-  </view>
-   </view>
-
-<view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习1内容:</view>
-  <view class="info-text">  <input name="shixi14" class="input-text" value="内容1"/></view>
-  </view>
-   </view>
-
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习2时间:</view>
-  <view class="info-text">      
-  <picker name="shi2date" bindchange="bindshi2DateChange" mode="date" value="{{shi2date}}" start="1990-01-01" end="2018-12-31">
-    <view class="picker">
-    {{shi2date}}
+    <view class='kong'>
+      <view class='ui_cell_bd'>点击下面方框上传自己的照片</view>
+      <view class='ui_cell_ft'>{{uploaderNum}}/1</view>
     </view>
-    </picker>
-    </view>
-  </view>
-   </view>
-   
-
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习2地点:</view>
-  <view class="info-text">  <input name="shixi22" class="input-text" value="地点2"/></view>
-  </view>
-   </view>
-
-   <view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习2职位:</view>
-  <view class="info-text">  <input name="shixi23" class="input-text" value="职位2"/></view>
-  </view>
-   </view>
-
-<view class="page-body-setting-item" >
-  <view class="own-info-item">
-  <view class="info-name">实习2内容:</view>
-  <view class="info-text">  <input name="shixi24" class="input-text" value="内容2"/></view>
-  </view>
-   </view>
-
-
-<view class="kuang">
-<textarea maxlength='200' bindinput='note' placeholder='请输入所获技能试证书，用空格分隔'>
-    <!-- <text class='eColor'></text> -->
-</textarea>
-</view>
-
-<view class="kuang">
-<textarea maxlength='100' bindinput='award' placeholder='请输入所获奖项,用空格分隔'>
-    <!-- <text class='eColor'></text> -->
-</textarea>
-</view>
-
-
-<view class="kuang">
- <textarea maxlength='100' bindinput='ziping' placeholder='请输入简短自评'>
-    <!-- <text class='eColor'></text> -->
-</textarea>
-</view>
-
-
-<view class='kong'>
-    <view class='ui_cell_bd'>点击下面方框上传自己的照片</view>
-    <view class='ui_cell_ft'>{{uploaderNum}}/1</view>
-</view>
-<view class='ui_uploader_cell'>
-    <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
-        <icon class='ui_uploader_item_icon' bindtap="cccc" data-index="{{index}}" type="clear" size="20" color="red"/>
+    <view class='ui_uploader_cell'>
+      <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+        <icon class='ui_uploader_item_icon' bindtap="cccc" data-index="{{index}}" type="clear" size="20" color="red" />
         <image bindtap='showImg' data-index="{{index}}" src='{{item}}'></image>
+      </view>
+      <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
     </view>
-    <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}"></view>
-</view>
 
-  <view>
-  <button class="button" form-type="submit">提交信息</button>
-  </view>
- 
-  </view>
- 
-</form>
+
+    <view>
+      <button class="button" form-type="submit">提交信息</button>
+    </view>
+
+  </form>
 </view>

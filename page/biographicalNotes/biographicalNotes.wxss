@@ -1,5 +1,15 @@
 /* page/biographicalNotes/biographicalNotes.wxss */
 /**用户信息样式**/
+
+
+.showtext{
+  font-size: 16px;
+  text-align: right;
+}
+
+
+
+
 .info-container{
    background-color:#EFEFF4;
   height: 100%;

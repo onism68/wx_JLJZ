@@ -1,2 +1,14 @@
 <!--page/biographicalNotes/down/down.wxml-->
-<text>page/biographicalNotes/down/down.wxml</text>
+
+<!-- <view>复制下列地址到浏览器打开下载：</view>
+<text>{{docxUrl}}</text> -->
+
+<view class="weui-cells__title">如果微信无法打开文档请复制下列地址到浏览器打开下载：</view>
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea" value= '{{docxUrl}}' style="height: 3.3em" />
+      <!-- <view class="weui-textarea-counter">0/200</view> -->
+    </view>
+  </view>
+</view>

@@ -73,6 +73,7 @@ Page({
         _that.setData({
           jobsId: res['data'],
         })
+        console.log(app.jobsIdMap)
         var content = app.jobsIdMap.get(_that.data.jobsId)
         // console.log(content)
         _that.setData({

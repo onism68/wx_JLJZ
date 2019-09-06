@@ -6,11 +6,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sexItems: [
+      { name: '男', value: '1' },
+      { name: '女', value: '0', checked: true }
+    ],
     // array: ['IT', '制造业', '互联网', '网络设备'],
     bdate: "1999-01-01",
-    shi1date: "2016-09-01",
-    shi2date: "2016-09-01",
+    shi1date: "2017-07-01",
+    shi2date: "2018-08-01",
     bydate: "2016-09-01",
+    zheng1date: "2019-05-01",
+    zheng2date: "2019-06-01",
+    jiang1date: "2019-08-01",
+    jiang2date: "2019-09-01",
     uploaderList: [],
     uploaderNum: 0,
     showUpload: true,
@@ -132,12 +140,20 @@ Page({
         mianmao: infovalue['mianMao'],
         shixi11: infovalue['shi1date'],
         shixi12: infovalue['shixi12'],
-        shixi13: infovalue['shixi13'],
-        shixi14: infovalue['shixi14'],
         shixi21: infovalue['shi2date'],
         shixi22: infovalue['shixi22'],
-        shixi23: infovalue['shixi23'],
-        shixi24: infovalue['shixi24'],
+
+        jiang1date: infovalue['jiang1date'],
+        jiang12: infovalue['jiang12'],
+
+        jiang2date: infovalue['jiang2date'],
+        jiang22: infovalue['jiang22'],
+
+        zheng1date: infovalue['zheng1date'],
+        zheng12: infovalue['zheng12'],
+        
+        zheng2date: infovalue['zheng2date'],
+        zheng22: infovalue['zheng22'],
       },
 
       success (res) {
@@ -229,13 +245,36 @@ Page({
       shi2date: event.detail.value
     })
   },
-  // 毕业时间
+  // 学历开始时间
   bindbyDateChange: function (event) {
     this.setData({
       bydate: event.detail.value
     })
   },
-
+  // 奖项1时间
+  bindjiang1DateChange: function (event) {
+    this.setData({
+      jiang1date: event.detail.value
+    })
+  },
+  // 奖项2时间
+  bindjiang2DateChange: function (event) {
+    this.setData({
+      jiang2date: event.detail.value
+    })
+  },
+  // 证书1时间
+  bindzheng1DateChange: function (event) {
+    this.setData({
+      zheng1date: event.detail.value
+    })
+  },
+  // 证书2时间
+  bindzheng2DateChange: function (event) {
+    this.setData({
+      zheng2date: event.detail.value
+    })
+  },
   // 性别
   checkSexChange: function(e) {
     console.log(e.detail.value)

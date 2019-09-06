@@ -34,4 +34,5 @@ App({
   util: require('./utils/util'),
   md5: require("./utils/md5.js"),
   _server: "https://onism.top", 
+  jobsIdMap: new Map()
 })

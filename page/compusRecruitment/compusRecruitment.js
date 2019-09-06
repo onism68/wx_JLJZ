@@ -6,7 +6,9 @@ Page({
   /**
    * 页面的初始数据
    */
+  
   data: {
+    
     // prompt: false,
     // jobsCon: "0"
   },
@@ -14,9 +16,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    // this.jobsIdMap.set("111","1111")
+
+    var today = app.util.formatTime(new Date()).substr(0, 10)
+    console.log(app.util.formatTime(new Date()))
+    var nextDayTimeStamp = Date.now() + 24 * 60 * 60 * 1000
+    var nextDay0 = new Date(nextDayTimeStamp)
+    var nextDay = app.util.formatTime(nextDay0).substr(0, 10)
+    // var NameDate = "todayJobs"
+    console.log(today)
+
     //  _this = this
     // console.log(this.data.jobsCon)
-    this.getJobs()
+    this.getJobs(today, "todayJobs")
+
+    // NameDate = "nextDayJobs"
+    console.log(nextDay)
+    this.getJobs(nextDay, "nextDayJobs")
+
     // console.log(this.data.jobsCon)
     // console.log()
     // this.prompt()
@@ -70,21 +88,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  getJobs: function () {
+  getJobs: function (Jobdate,NameDate) {
+    console.log(NameDate)
     // 用创建ID map存取招聘信息，提高读取效率
-    let jobsIdMap = new Map()
-    app.jobsIdMap = jobsIdMap
-
-    var today = app.util.formatTime(new Date()).substr(0, 10)
-    console.log(app.util.formatTime(new Date()))
-    var nextDayTimeStamp = Date.now() + 24 * 60 * 60 * 1000
-    var nextDay0 = new Date(nextDayTimeStamp)
-    var nextDay = app.util.formatTime(nextDay0).substr(0, 10)
-    console.log(today)
-    console.log(nextDay)
-    // jobsDate = "2019-05-14"
     var that = this
-    var jsonserver = app._server +"/xpuJobs/getJobs?startDate="+today
+
+    // app.jobsIdMap = that.jobsIdMap
+    console.log(app.jobsIdMap)
+    // jobsDate = "2019-05-14"
+    
+    var jsonserver = app._server + "/xpuJobs/getJobs?startDate=" + Jobdate
     console.log(jsonserver)
     wx.request({
       url: jsonserver,
@@ -102,18 +115,18 @@ Page({
           // console.log(rows)
           for (var i = 0; i < rows.length; i++) {
             var jobsId = rows[i]['JobsId']
-            jobsIdMap.set(jobsId, rows[i])
+            app.jobsIdMap.set(jobsId, rows[i])
             //var CompanyName = rows[i]['CompanyName'];
             // console.log(rows[i]['CompanyName']);
             // data: {
             //   jobs: CompanyName};
           }
           // test
-          console.log(jobsIdMap)
-
-          that.setData({
-            jobsName: rows
-          })
+          console.log(app.jobsIdMap)
+          console.log(NameDate)
+          var _data = {}
+          _data[NameDate] = rows
+          that.setData(_data)
           console.log(rows)
           // return rows
           // wx.setStorage({

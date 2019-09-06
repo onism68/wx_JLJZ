@@ -1,14 +1,24 @@
 <!--page/compusRecruitment/compusRecruitment.wxml-->
 
-
-<view class="weui-cells weui-cells_after-title" wx:for="{{jobsName}}" wx:key='JobsId' >
+<view class="page__bd">
+    <view class="weui-cells__title">今日招聘会：</view>
+<view class="weui-cells weui-cells_after-title" wx:for="{{todayJobs}}" wx:key='JobsId' >
   <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
       <view class="weui-cell__bd" bindtap="toJobCon" id= '{{item.JobsId}}'>{{item.CompanyName}}</view>
       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
   </view>
 </view>
+</view>
 
-
+<view class="page__bd">
+    <view class="weui-cells__title">明日招聘会：</view>
+<view class="weui-cells weui-cells_after-title" wx:for="{{nextDayJobs}}" wx:key='JobsId' >
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+      <view class="weui-cell__bd" bindtap="toJobCon" id= '{{item.JobsId}}'>{{item.CompanyName}}</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </view>
+</view>
+</view>
 <!-- <view class='ui_nomore'>
     <view class='ui_nomore_bit'></view>
 </view>

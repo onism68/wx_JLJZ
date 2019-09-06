@@ -1,7 +1,7 @@
 /* page/compusRecruitment/compusRecruitment.wxss */
-page{
+/* page{
   background-color: #313340;
-}
+} */
 .ui_mask {
     position: fixed;
     top: 0;

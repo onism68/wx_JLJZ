@@ -1,25 +1,49 @@
 <!--page/compusRecruitment/jobContents/jobsContents.wxml-->
 <!-- 招聘信息详情页 -->
 <view class="weui-cell">
-  <view class="weui-cell__bd" >公司名称：</view>
+  <view class="weui-cell__bd">公司名称：</view>
 </view>
 <view class="weui-cell">
   <view class="weui-cell__ft">{{CompanyName}}</view>
 </view>
+<view class="weui-cell">
+<view class="weui-cell__bd">公司性质：</view>
+<view class="weui-cell__ft">{{CompanyType}}</view>
+</view>
+<view class="weui-cell">
+<view class="weui-cell__bd">招聘专业：</view>
+</view>
+<view class="weui-cell">
+<view class="weui-cell__ft">{{Specialty}}</view>
+</view>
 
-  <view class="weui-cell__bd" >公司性质：</view><view class="weui-cell__ft">{{CompanyType}}</view>
+<view class="weui-cell">
+<view class="weui-cell__bd">招聘职位：</view>
+</view>
+<view class="weui-cell">
+<view class="weui-cell__ft">{{PostDemand}}</view>
+</view>
 
-  <view class="weui-cell__bd" >招聘专业：</view><view class="weui-cell__ft">{{Specialty}}</view>
+<view class="weui-cell">
+<view class="weui-cell__bd">宣讲地点：</view>
+</view>
+<view class="weui-cell">
+<view class="weui-cell__ft">{{SitusName}}</view>
+</view>
 
-  <view class="weui-cell__bd" >招聘职位：</view><view class="weui-cell__ft">{{PostDemand}}</view>
-
-  <view class="weui-cell__bd" >宣讲地点：</view><view class="weui-cell__ft">{{SitusName}}</view>
-
-  <view class="weui-cell__bd" >宣讲时间：</view><view class="weui-cell__ft">{{MeetTime}}</view>
-
-  <view class="weui-cell__bd" >公司联系人：</view><view class="weui-cell__ft">{{CompanyLinkmen}}</view>
-
-  <view class="weui-cell__bd" >联系人电话：</view><view class="weui-cell__ft">{{CompanyTel}}</view>
-
-  <view class="weui-cell__bd" >公司邮箱：</view><view class="weui-cell__ft">{{CompanyEmail}}</view>
-
+<view class="weui-cell">
+<view class="weui-cell__bd">宣讲时间：</view>
+<view class="weui-cell__ft">{{MeetTime}}</view>
+</view>
+<view class="weui-cell">
+<view class="weui-cell__bd">公司联系人：</view>
+<view class="weui-cell__ft">{{CompanyLinkmen}}</view>
+</view>
+<view class="weui-cell">
+<view class="weui-cell__bd">联系人电话：</view>
+<view class="weui-cell__ft">{{CompanyTel}}</view>
+</view>
+<view class="weui-cell">
+<view class="weui-cell__bd">公司邮箱：</view>
+<view class="weui-cell__ft">{{CompanyEmail}}</view>
+</view>

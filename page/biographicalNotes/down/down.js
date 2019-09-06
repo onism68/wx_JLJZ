@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.downDocx()
+    this.downDocx()
     
   },
 
@@ -72,6 +72,10 @@ Page({
       key: 'docxFileName',
       success: function (res) {
         console.log(res)
+        _that.setData({
+          'docxUrl': app._server + "/userDocx/" + res.data + ".docx"
+        })
+        console.log(app._server + "/userDocx/" + res.data + ".docx")
         wx.downloadFile({
           url: app._server + "/userDocx/" + res.data+".docx",
           success: function (res) {
@@ -81,10 +85,16 @@ Page({
               filePath: filePath,
               success: function (res) {
                 console.log(res)
+              },
+              fail: function (res) {
+                console.log(res)
               }
             })
           },
         })
+      },
+      fail: function (res) {
+        console.log(res)
       }
     })
   }

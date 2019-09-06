@@ -1,6 +1,11 @@
 /**app.wxss**/
 /* 全局引入weui */
 @import './weui.wxss';
+page{
+    background-color: #EDEDED;
+    font-size: 16px;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
 
 .container {
   height: 100%;
