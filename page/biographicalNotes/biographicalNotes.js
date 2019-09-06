@@ -33,24 +33,6 @@ Page({
    */
   onLoad: function (options) {
 
-    var code = "";
-    //首先默认code为空字符串
-    //设置长度，这里看需求，我这里设置了10
-    var codeLength = 16;
-    //设置随机字符
-    var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
-    //循环codeLength 我设置的10就是循环10次
-    for (var i = 0; i < codeLength; i++) {
-      //设置随机数范围,这设置为0 ~ 36
-      var index = Math.floor(Math.random() * 36);
-      //字符串拼接 将每次随机的字符 进行拼接
-      code += random[index];
-    }
-    this.setData({
-      userId: app.md5.md5(code)
-    })
-    console.log(code)
-    console.log(app.md5.md5(code))
   },
 
   /**
@@ -100,6 +82,27 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // MD5生成函数
+  userIdMd5: function() {
+
+    var code = "";
+    //首先默认code为空字符串
+    //设置长度，这里看需求，我这里设置了10
+    var codeLength = 16;
+    //设置随机字符
+    var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');
+    //循环codeLength 我设置的10就是循环10次
+    for (var i = 0; i < codeLength; i++) {
+      //设置随机数范围,这设置为0 ~ 36
+      var index = Math.floor(Math.random() * 36);
+      //字符串拼接 将每次随机的字符 进行拼接
+      code += random[index];
+    }
+    console.log(code)
+    console.log(app.md5.md5(code))
+    return app.md5.md5(code)
   },
   /**
    * 获取表单数据
@@ -279,9 +282,26 @@ Page({
   checkSexChange: function(e) {
     console.log(e.detail.value)
   },
+// 去除图片
+  clearImage: function (e) {
 
-  cccc: function (e) {
-    console.log("你好")
+    wx.request({
+      url: app._server + "/wxResume/deleteImage",
+      method: "GET",
+      data: {
+        userId: this.data.userId,
+      },
+      success: function(res) {
+        console.log(res)
+      },
+      fail: function(res) {
+        console.log(res)
+      }
+    })
+    this.setData({
+      userId: 0
+    })
+    console.log(this.data.userId)
     var nowList = [];//新数据
     var uploaderList = this.data.uploaderList;//原数据
 
@@ -309,6 +329,11 @@ Page({
   //上传图片
   upload: function (e) {
     var that = this;
+    var userIdTmp = that.userIdMd5()
+    console.log(userIdTmp)
+    that.setData({
+      "userId": userIdTmp
+    })   
     wx.chooseImage({
       count: 1 - that.data.uploaderNum, // 默认1
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
